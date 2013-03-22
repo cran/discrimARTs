@@ -1,0 +1,17 @@
+abe27be6d70b78288248c01d35f656e5 *DESCRIPTION
+e20afde6534cb0462cba95ac7e71b11f *NAMESPACE
+b55efbb139021a3710c897f269b2ecf1 *R/distlist.R
+9c6970b89a707f6a15ba6a3842ee8557 *R/loglik.R
+58c091ebcbc88dc3801b7ee1e8bb9ed2 *R/methods.R
+917c470dddf3ac71d0511f094ff661cd *R/mle.R
+735545bd535ab056ee1f22aeeeda94d2 *R/testing.R
+ac2bd7c0ed0c854cf1f15666fc12ac58 *data/o_taurus.csv.gz
+15b196c2617d049678b82a9cad965de7 *data/x_gideon.csv.gz
+bca5c899158882671434db20f812c8f3 *inst/unitTests/runit.converge.R
+2f1cdc2c3b0531c4e52893ef3aa025b9 *man/discrimARTs-package.Rd
+52fe60894eb387ae2b46b2c5050a36c3 *man/mix.loglik.Rd
+f81c9b5d5421ae4511e67dc33c767b91 *man/mix.mle.Rd
+b41b984ec988573d9966d479979a61ef *man/mix.synthetic.Rd
+395ed8cdaca01839fd4563b50c0af5f5 *man/o_taurus.Rd
+77f01e3b69bec3bbda5f7d747906b96a *man/x_gideon.Rd
+480b968a1a6d52a8d955834806728d9d *tests/runTests.R

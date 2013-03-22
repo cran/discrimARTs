@@ -1,0 +1,53 @@
+\name{discrimARTs}
+\alias{Discriminate ARTs}
+\alias{discrimARTs}
+\docType{package}
+\title{
+Discriminate Alternative Reproductive Tactics (ARTs) of Morphological Dimorphisms Using Likelihood Mixture Models
+}
+\description{
+Algorithm discriminates with explicit confidence the alternative reproductive tactics (ARTs) in dimorphic species with bimodal traits.
+The bimodal distribution is parameterized by normal or facing gamma mixture distribution models. Likelihood of the alternative phenoypes for a given trait size are computed from the mixture models. Algorithm computes MLE of distribution parameters and the morph ratio. 
+}
+\details{
+%\tabular{ll}{
+%Package: \tab discrimARTs\cr
+%Type: \tab Package\cr
+%Version: \tab 1.0\cr
+%Date: \tab 2013-03-29\cr
+%License: \tab What license is it under?\cr
+%}
+To use this package, the user supplies a vector of sample measurements that represent a dimorphic trait, and intial parameter values for each of two probability density functions (pdf), as well as the mixture probability (morph ratio) of the morph with the larger trait sizes. 
+For the normal pdfs each distribution has mean and standard deviation parameters. 
+For the facing gamma pdfs each distribution has shape and scaling parameters. 
+The first distribution is Y1 = LB + theta1*X1 and the facing gamma distribution is Y2 = UB - theta2*X2, where LB and UB are the lower and upper bounds of trait sizes, X1 ~ Gamma(alpha1,1),  X2 ~ Gamma(alpha2,1), alpha is the shape parameter and theta is the scaling parameter,    
+The mean trait size of the first gamma pdf is LB + alpha1*theta1 and the mean of the facing gamma pdf is UB - alpha2*theta2.  LB may be chosen equal to the smallest trait size in the sample minus a small amount often computed such as 1/2\% or 1\% or more percent of the range of sample trait sizes; UB is chosen as the largest trait size in the sample plus a small amount. 
+
+The sample column vector and the inital parameter values must represent a mixture of two distrubutions with adequately separated means, usually by at least two standard deviations. Random sampling of a dimorphic trait and reasonable choices of initial values should meet this requirement. 
+
+This package is specifically designed to fit the mixture of facing gammas, where 
+the trait distribution of the subordinate male is almost always skewed right; but that the trait size distribution of the dominant male is almost always skewed left.
+We find facing gammas to be an important model for discriminating dimorphic traits. This model differs from the usual gamma mixture, where both gamma distributions "face" right with the long tails (skewness) of both distributions extend to the right (toward larger values) and the lower bound is often set equal to zero. 
+}
+\author{
+Rowland JM, Qualls CR, Gunning C.
+}
+
+\references{
+Cite the following paper:
+
+Rowland JM, Qualls CR. Likelihood models for discriminating alternative phenotypes in morphologically dimorphic species. 
+Evolutionary Ecology Research 7: 421-434 (2005).
+}
+%\cite{
+%Rowland JM, Qualls CR. Likelihood models for discriminating alternative phenotypes in morphologically dimorphic species. 
+%Evolutionary Ecology Research 7: 421-434 (2005)
+%
+%}
+\seealso{
+\code{\link{mix.mle}},
+\code{\link{mix.loglik}},
+\code{\link{x_gideon}},
+\code{\link{o_taurus}},
+\code{\link{mix.synthetic}}
+}

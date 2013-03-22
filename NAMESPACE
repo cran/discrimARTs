@@ -1,0 +1,7 @@
+export(mix.mle)
+export(mix.loglik)
+export(mix.synthetic.facing.gamma)
+export(mix.synthetic.normal)
+## Methods
+S3method(print, discrimARTs)
+S3method(plot, discrimARTs)
