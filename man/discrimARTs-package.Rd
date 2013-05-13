@@ -6,8 +6,9 @@
 Discriminate Alternative Reproductive Tactics (ARTs) of Morphological Dimorphisms Using Likelihood Mixture Models
 }
 \description{
-Algorithm discriminates with explicit confidence the alternative reproductive tactics (ARTs) in dimorphic species with bimodal traits.
-The bimodal distribution is parameterized by normal or facing gamma mixture distribution models. Likelihood of the alternative phenoypes for a given trait size are computed from the mixture models. Algorithm computes MLE of distribution parameters and the morph ratio. 
+Algorithm discriminates with explicit confidence the alternative reproductive tactics (ARTs) in dimorphic
+mating systems with bimodal trait size distributions such as in the male horn polyphenisms in beetles. The bimodal distribution is parameterized by normal mixture distributions or facing gamma mixture distribution models. Likelihood of the alternative tactics for a given trait size is computed from the mixture models. Algorithm computes MLE of distribution parameters and the morph ratio.
+
 }
 \details{
 %\tabular{ll}{
@@ -17,17 +18,13 @@ The bimodal distribution is parameterized by normal or facing gamma mixture dist
 %Date: \tab 2013-03-29\cr
 %License: \tab What license is it under?\cr
 %}
-To use this package, the user supplies a vector of sample measurements that represent a dimorphic trait, and intial parameter values for each of two probability density functions (pdf), as well as the mixture probability (morph ratio) of the morph with the larger trait sizes. 
-For the normal pdfs each distribution has mean and standard deviation parameters. 
-For the facing gamma pdfs each distribution has shape and scaling parameters. 
-The first distribution is Y1 = LB + theta1*X1 and the facing gamma distribution is Y2 = UB - theta2*X2, where LB and UB are the lower and upper bounds of trait sizes, X1 ~ Gamma(alpha1,1),  X2 ~ Gamma(alpha2,1), alpha is the shape parameter and theta is the scaling parameter,    
-The mean trait size of the first gamma pdf is LB + alpha1*theta1 and the mean of the facing gamma pdf is UB - alpha2*theta2.  LB may be chosen equal to the smallest trait size in the sample minus a small amount often computed such as 1/2\% or 1\% or more percent of the range of sample trait sizes; UB is chosen as the largest trait size in the sample plus a small amount. 
+In Rowland & Qualls (2005) and in diverse unpublished data we have found that in the male-dimorphic ornaments of beetles which express gamma distributions the trait of the smaller, usually subordinate male is almost always skewed right and that the trait size distribution of the larger, usually dominant male is almost always skewed left. Unfortunately, previously available gamma mixture models are designed to fit data in which the long tails (skewness) of both gamma distributions extend to the right toward larger values. Therefore, this package is specifically and uniquely designed to fit the mixture of facing gamma distributions, where the trait distribution of the smaller male is skewed right; and the trait size distribution of the larger male is skewed left. 
 
-The sample column vector and the inital parameter values must represent a mixture of two distrubutions with adequately separated means, usually by at least two standard deviations. Random sampling of a dimorphic trait and reasonable choices of initial values should meet this requirement. 
+The package user supplies a vector of sample measurements that represent a dimorphic trait; initial parameter values for each of two probability density functions (pdf); and the mixture probability (morph ratio) of the morph with the larger trait sizes. For the normal pdfs each distribution has mean and standard deviation parameters. For the facing gamma pdfs each distribution has shape and scaling parameters: The left gamma distribution is Y1 = LB + theta1*X1; and the right gamma distribution is Y2 = UB - theta2*X2. In the latter expression LB and UB are the lower and upper bounds of trait sizes; X1 ~ Gamma(alpha1,1); X2 ~ Gamma(alpha2,1); alpha is the shape parameter and theta is the scaling parameter. The mean trait size of the first gamma pdf is LB + alpha1*theta1 and the mean of the facing gamma pdf is UB - alpha2*theta2. LB may be chosen equal to the smallest trait size in the sample minus a small amount often computed such as 1/2\% or 1\% or more of the range of sample trait sizes; UB is chosen as the largest trait size in the sample plus a small amount.
 
-This package is specifically designed to fit the mixture of facing gammas, where 
-the trait distribution of the subordinate male is almost always skewed right; but that the trait size distribution of the dominant male is almost always skewed left.
-We find facing gammas to be an important model for discriminating dimorphic traits. This model differs from the usual gamma mixture, where both gamma distributions "face" right with the long tails (skewness) of both distributions extend to the right (toward larger values) and the lower bound is often set equal to zero. 
+The sample column vector and the initial parameter values must represent a mixture of two distrubutions
+with adequately separated means, usually by at least two standard deviations. Random sampling of a dimorphic trait and reasonable choices of initial values are also assumptions of this model.
+
 }
 \author{
 Rowland JM, Qualls CR, Gunning C.
